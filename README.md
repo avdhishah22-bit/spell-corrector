@@ -13,11 +13,11 @@ written from scratch with no external libraries.
 ```python
 from spell_correction.edit_distance import levenshtein_distance
 
-levenshtein_distance("aple", "apple")   # 1
-levenshtein_distance("cat", "cut")      # 1
-levenshtein_distance("book", "books")   # 1
-levenshtein_distance("abc", "xyz")      # 3
-levenshtein_distance("apple", "apple")  # 0
+levenshtein_distance("aple", "apple")   # Returns 1
+levenshtein_distance("cat", "cut")      # Returns 1
+levenshtein_distance("book", "books")   # Retrurns 1
+levenshtein_distance("abc", "xyz")      # Returns 3
+levenshtein_distance("apple", "apple")  # Returns 0
 ```
 
 ## Project structure
@@ -83,28 +83,18 @@ python -m unittest discover -s tests -v
 
 Expected result: `Ran 18 tests ... OK`.
 
-If you keep `edit_distance.py` and `test_edit_distance.py` in one flat folder instead:
-
-```
-python -m unittest test_edit_distance -v
-```
-
 To see the DP table demo:
 
 ```
 python spell_correction/edit_distance.py
 ```
 
-## Notes for teammates
+## Notes 
 
-- **Case-sensitive:** lower-case words before calling (B3 cleans the dictionary, B4 cleans the query).
+- **Case-sensitive:** lower-case words before calling.
 - **Transpositions cost 2:** plain Levenshtein counts `recieve` -> `receive` as 2 edits, not 1.
-- **Safe pruning bound:** `|len(a) - len(b)| <= distance(a, b)`, so B2 can skip any
-  word whose length differs from the query by more than `max_distance`.
+- **Safe pruning bound:** `|len(a) - len(b)| <= distance(a, b).
 - **Input check:** non-string inputs raise `TypeError`.
 - **Interface:** `levenshtein_distance(word1, word2) -> int`
 
-## Git
-
-Branch: `feature/spell-edit-distance`
 
