@@ -124,7 +124,7 @@ def levenshtein_distance_optimized(word1, word2):
 
 
 # --------------------------------------------------------------------------
-# 3. Public interface (agreed with B2 and B4)
+# 3. Public interface
 # --------------------------------------------------------------------------
 def levenshtein_distance(word1, word2):
     """
