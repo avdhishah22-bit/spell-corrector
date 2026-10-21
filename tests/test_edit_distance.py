@@ -1,10 +1,8 @@
 """
-Unit tests for edit_distance.py  (B1)
+Unit tests for edit_distance.py 
 Run with:  python -m unittest test_edit_distance -v
 (or:       pytest test_edit_distance.py)
 
-If your project uses the spell_correction package, change the import to:
-    from spell_correction.edit_distance import ...
 """
 import random
 import unittest
